@@ -210,12 +210,12 @@ describe("Codex Adapter", () => {
   test("applyInteractiveMode removes _subcommand", () => {
     const frontmatter: AgentFrontmatter = {
       _subcommand: "exec",
-      model: "gpt-4",
+      model: "gpt-5.6-sol",
     };
 
     const result = codexAdapter.applyInteractiveMode(frontmatter);
     expect(result._subcommand).toBeUndefined();
-    expect(result.model).toBe("gpt-4");
+    expect(result.model).toBe("gpt-5.6-sol");
   });
 });
 

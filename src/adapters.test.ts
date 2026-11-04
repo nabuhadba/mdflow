@@ -30,7 +30,7 @@ describe("portable adapter translation", () => {
   test("translates canonical max-tokens to codex-specific flag", () => {
     const args = buildArgs(
       {
-        model: "o3",
+        model: "gpt-5.6-sol",
         temperature: 0.4,
         "max-tokens": 2048,
       },
@@ -38,7 +38,7 @@ describe("portable adapter translation", () => {
       "codex"
     );
 
-    expectFlagValue(args, "--model", "o3");
+    expectFlagValue(args, "--model", "gpt-5.6-sol");
     expectFlagValue(args, "--temperature", "0.4");
     expectFlagValue(args, "--max-output-tokens", "2048");
     expect(args).not.toContain("--max-tokens");
@@ -115,7 +115,7 @@ describe("portable adapter translation", () => {
     expect(codex).toBeDefined();
 
     const normalized = codex!.normalizeFrontmatter({
-      model: "o3",
+      model: "gpt-5.6-sol",
       max_tokens: 4000,
       maxTokens: 5000,
     });

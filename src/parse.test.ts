@@ -46,12 +46,12 @@ Body`;
 context:
   - src/**/*.ts
   - lib/**/*.ts
-model: gpt-5
+model: gpt-5.6-sol
 ---
 Body`;
     const result = parseFrontmatter(content);
     expect(result.frontmatter.context).toEqual(["src/**/*.ts", "lib/**/*.ts"]);
-    expect(result.frontmatter.model).toBe("gpt-5");
+    expect(result.frontmatter.model).toBe("gpt-5.6-sol");
   });
 
   test("handles kebab-case keys", () => {
@@ -71,7 +71,7 @@ Body`;
 
   test("preserves multiline body", () => {
     const content = `---
-model: gpt-5
+model: gpt-5.6-sol
 ---
 
 Line 1
@@ -86,11 +86,11 @@ Line 3`;
   test("strips shebang line before parsing", () => {
     const content = `#!/usr/bin/env md
 ---
-model: gpt-5
+model: gpt-5.6-sol
 ---
 Body content`;
     const result = parseFrontmatter(content);
-    expect(result.frontmatter.model).toBe("gpt-5");
+    expect(result.frontmatter.model).toBe("gpt-5.6-sol");
     expect(result.body).toBe("Body content");
   });
 
@@ -144,12 +144,12 @@ describe("parseFrontmatter passthrough", () => {
 custom:
   nested:
     value: 42
-model: gpt-5
+model: gpt-5.6-sol
 ---
 Body`;
     const result = parseFrontmatter(content);
     expect(result.frontmatter.custom).toEqual({ nested: { value: 42 } });
-    expect(result.frontmatter.model).toBe("gpt-5");
+    expect(result.frontmatter.model).toBe("gpt-5.6-sol");
   });
 
   test("passes through arrays of objects", () => {

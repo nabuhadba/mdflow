@@ -338,7 +338,7 @@ Test prompt for dry run`,
 				"/test/dryrun-fm.echo.md",
 				`---
 verbose: true
-model: gpt-4
+model: gpt-5.6-sol
 custom-flag: value
 ---
 Test with frontmatter`,
