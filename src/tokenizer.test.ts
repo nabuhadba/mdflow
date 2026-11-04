@@ -82,10 +82,9 @@ describe("tokenizer", () => {
     });
 
     it("returns correct limit for OpenAI models", () => {
-      expect(getContextLimit("gpt-4")).toBe(128000);
-      expect(getContextLimit("gpt-4-turbo")).toBe(128000);
+      expect(getContextLimit("gpt-5.6-sol")).toBe(1050000);
       expect(getContextLimit("gpt-4o")).toBe(128000);
-      expect(getContextLimit("gpt-3.5-turbo")).toBe(16385);
+      expect(getContextLimit("gpt-5.6-terra")).toBe(1050000);
     });
 
     it("returns correct limit for Gemini models", () => {
@@ -96,15 +95,15 @@ describe("tokenizer", () => {
 
     it("handles case-insensitive model names", () => {
       expect(getContextLimit("OPUS")).toBe(200000);
-      expect(getContextLimit("GPT-4")).toBe(128000);
+      expect(getContextLimit("GPT-5.6-SOL")).toBe(1050000);
       expect(getContextLimit("Gemini")).toBe(1000000);
     });
 
     it("matches partial model names", () => {
       // "claude-opus-4-20241022" should match "opus"
       expect(getContextLimit("claude-opus-4-20241022")).toBe(200000);
-      // "gpt-4-1106-preview" should match "gpt-4"
-      expect(getContextLimit("gpt-4-1106-preview")).toBe(128000);
+      // "gpt-4o-2024-08-06" should match "gpt-4o"
+      expect(getContextLimit("gpt-4o-2024-08-06")).toBe(128000);
     });
 
     it("returns default for unknown models", () => {
@@ -115,7 +114,7 @@ describe("tokenizer", () => {
     it("uses config override when provided", () => {
       // Config override should take priority over model-based limit
       expect(getContextLimit("opus", 50000)).toBe(50000);
-      expect(getContextLimit("gpt-4", 256000)).toBe(256000);
+      expect(getContextLimit("gpt-5.6-sol", 256000)).toBe(256000);
       expect(getContextLimit(undefined, 75000)).toBe(75000);
     });
 
@@ -207,7 +206,7 @@ describe("tokenizer", () => {
       expect(MODEL_CONTEXT_LIMITS.haiku).toBeDefined();
 
       // OpenAI
-      expect(MODEL_CONTEXT_LIMITS["gpt-4"]).toBeDefined();
+      expect(MODEL_CONTEXT_LIMITS["gpt-5.6-sol"]).toBeDefined();
       expect(MODEL_CONTEXT_LIMITS["gpt-4o"]).toBeDefined();
 
       // Gemini

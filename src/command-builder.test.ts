@@ -514,7 +514,7 @@ describe("buildCommand", () => {
   it("applies $1 mapping to body", () => {
     const result = buildCommand(
       "copilot",
-      { $1: "prompt", model: "gpt-4" },
+      { $1: "prompt", model: "gpt-5.6-sol" },
       "Hello world",
       [],
       new Set(),
@@ -523,7 +523,7 @@ describe("buildCommand", () => {
     );
 
     expect(result.args).toContain("--model");
-    expect(result.args).toContain("gpt-4");
+    expect(result.args).toContain("gpt-5.6-sol");
     // Body should be passed as --prompt in positionals
     expect(result.positionals).toContain("--prompt");
     expect(result.positionals).toContain("Hello world");
@@ -996,7 +996,7 @@ describe("integration scenarios", () => {
 
     const result = buildCommand(
       "copilot",
-      { model: "gpt-4" },
+      { model: "gpt-5.6-sol" },
       "Explain this code",
       [],
       new Set(),
@@ -1009,7 +1009,7 @@ describe("integration scenarios", () => {
     expect(spawnArgs).toContain("--prompt");
     expect(spawnArgs).toContain("Explain this code");
     expect(spawnArgs).toContain("--model");
-    expect(spawnArgs).toContain("gpt-4");
+    expect(spawnArgs).toContain("gpt-5.6-sol");
   });
 
   it("claude with multiple add-dir flags", () => {
@@ -1158,7 +1158,7 @@ describe("dry-run consistency guarantee", () => {
     // Build once - used for both dry-run and execution
     const spec = buildCommand(
       "codex",
-      { model: "gpt-4" },
+      { model: "gpt-5.6-sol" },
       "Run this task",
       [],
       new Set(),

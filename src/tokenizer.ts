@@ -49,14 +49,12 @@ export const MODEL_CONTEXT_LIMITS: Record<string, number> = {
   "claude-sonnet-4": 200000,
 
   // OpenAI models
-  "gpt-4": 128000,
-  "gpt-4-turbo": 128000,
+  "gpt-5.6-sol": 1050000,
   "gpt-4o": 128000,
   "gpt-4o-mini": 128000,
-  "gpt-3.5-turbo": 16385,
+  "gpt-5.6-terra": 1050000,
   o1: 200000,
-  "o1-mini": 128000,
-  "o1-preview": 128000,
+  "o4-mini": 200000,
 
   // Gemini models
   gemini: 1000000,

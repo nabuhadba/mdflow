@@ -270,7 +270,7 @@ const MODEL_SUGGESTIONS: Record<string, readonly string[]> = {
 		"claude-opus-4.6",
 		"claude-sonnet-4.5",
 		"claude-haiku-4.5",
-		"gpt-5.3-codex",
+		"gpt-6-sol",
 		"gpt-5.2",
 		"gemini-3-pro-preview",
 	],

@@ -313,7 +313,7 @@ describe("redactArgsArray", () => {
 describe("integration scenarios", () => {
   test("typical API key scenario", () => {
     const args = {
-      model: "gpt-4",
+      model: "gpt-5.6-sol",
       api_key: "sk-abcdefghijklmnop",
       max_tokens: 1000,
     };
@@ -323,8 +323,8 @@ describe("integration scenarios", () => {
 
     expect(masked.api_key).toBe("sk-****");
     expect(redacted.api_key).toBe("[REDACTED]");
-    expect(masked.model).toBe("gpt-4");
-    expect(redacted.model).toBe("gpt-4");
+    expect(masked.model).toBe("gpt-5.6-sol");
+    expect(redacted.model).toBe("gpt-5.6-sol");
   });
 
   test("CLI args with secrets", () => {

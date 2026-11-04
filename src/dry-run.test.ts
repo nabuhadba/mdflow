@@ -149,7 +149,7 @@ Hello, {{ _name }}! Welcome.`
       tempDir,
       "generic.md",
       `---
-model: gpt-4
+model: gpt-5.6-sol
 ---
 Test prompt for generic file.`
     );
@@ -161,7 +161,7 @@ Test prompt for generic file.`
     expect(result.stdout).toContain("Command:");
     expect(result.stdout).toContain("gemini"); // Should use --_command value
     expect(result.stdout).toContain("--model");
-    expect(result.stdout).toContain("gpt-4");
+    expect(result.stdout).toContain("gpt-5.6-sol");
   });
 
   test("dry-run shows estimated token count", async () => {
