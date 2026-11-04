@@ -272,7 +272,7 @@ const MODEL_SUGGESTIONS: Record<string, readonly string[]> = {
 		"claude-haiku-4.5",
 		"gpt-5.3-codex",
 		"gpt-5.2",
-		"gemini-3-pro-preview",
+		"gemini-3.1-pro-preview",
 	],
 	grok: ["grok-4.5"],
 	// kimi models are provider-configured (config.toml aliases) — free text.
