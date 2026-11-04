@@ -47,7 +47,7 @@ describe("portable adapter translation", () => {
   test("translates canonical max-tokens to gemini-specific flag", () => {
     const args = buildArgs(
       {
-        model: "gemini-3-pro-preview",
+        model: "gemini-3.1-pro-preview",
         temperature: 0.1,
         "max-tokens": 4096,
       },
@@ -55,7 +55,7 @@ describe("portable adapter translation", () => {
       "gemini"
     );
 
-    expectFlagValue(args, "--model", "gemini-3-pro-preview");
+    expectFlagValue(args, "--model", "gemini-3.1-pro-preview");
     expectFlagValue(args, "--temperature", "0.1");
     expectFlagValue(args, "--max-output-tokens", "4096");
     expect(args).not.toContain("--max-tokens");

@@ -667,7 +667,7 @@ Analyze the database schema and suggest optimizations.
 ```markdown
 # refactor.gemini.md
 ---
-model: gemini-3-pro-preview
+model: gemini-3.1-pro-preview
 yolo: true
 ---
 Refactor the authentication module to use async/await.
